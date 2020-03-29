@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedBlackTreeProject", "RedBlackTreeProject\RedBlackTreeProject.csproj", "{442B142F-4E78-4891-984F-DB84BDC7F480}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedBlackTreeTests", "RedBlackTreeTests\RedBlackTreeTests.csproj", "{CC10D502-60E2-48DB-86CB-312BF3C3DB06}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{442B142F-4E78-4891-984F-DB84BDC7F480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{442B142F-4E78-4891-984F-DB84BDC7F480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{442B142F-4E78-4891-984F-DB84BDC7F480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{442B142F-4E78-4891-984F-DB84BDC7F480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC10D502-60E2-48DB-86CB-312BF3C3DB06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC10D502-60E2-48DB-86CB-312BF3C3DB06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC10D502-60E2-48DB-86CB-312BF3C3DB06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC10D502-60E2-48DB-86CB-312BF3C3DB06}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
