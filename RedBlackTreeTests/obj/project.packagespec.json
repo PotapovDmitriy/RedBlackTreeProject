@@ -14,7 +14,11 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "projectReferences": {}
+        "projectReferences": {
+          "G:\\C# projects\\RedBlackTreeProject\\RedBlackTreeProject\\RedBlackTreeProject.csproj": {
+            "projectPath": "G:\\C# projects\\RedBlackTreeProject\\RedBlackTreeProject\\RedBlackTreeProject.csproj"
+          }
+        }
       }
     },
     "warningProperties": {

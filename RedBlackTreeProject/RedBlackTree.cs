@@ -12,12 +12,36 @@ namespace RedBlackTreeProject
     
             public RedBlackTree(int valueRoot)
             {
-                _root = new Node(valueRoot);
+                _root = new Node(valueRoot, Color.Black);
+                _allNodes.Add(_root);
             }
-    
-            public void InsertNode(int value){}
-    
-            public void DeleteNode(int value){}
+
+            public void InsertNode(int value)
+            {
+                var node = new Node(value, Color.Red);
+                _allNodes.Add(node);
+            }
+
+            public void DeleteNode(int value)
+            {
+                var node = FindNodeByValue(value);
+                _allNodes.Remove(node);
+            }
             public int CountOfNode() => _allNodes.Count();
+
+            public List<Node> GetAllNodes() => _allNodes;
+
+            private Node FindNodeByValue(int value)
+            {
+                foreach (var node in _allNodes)
+                {
+                    if (value == node.GetValue())
+                    {
+                        return node;
+                    }
+                }
+
+                return new Node(0, Color.Red);
+            }
     }
 }

@@ -1225,6 +1225,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
+      },
+      "RedBlackTreeProject/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/RedBlackTreeProject.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RedBlackTreeProject.dll": {}
+        }
       }
     }
   },
@@ -4618,12 +4628,18 @@
         "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
+    },
+    "RedBlackTreeProject/1.0.0": {
+      "type": "project",
+      "path": "../RedBlackTreeProject/RedBlackTreeProject.csproj",
+      "msbuildProject": "../RedBlackTreeProject/RedBlackTreeProject.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.NET.Test.Sdk >= 16.4.0",
       "NUnit3TestAdapter >= 3.15.1",
+      "RedBlackTreeProject >= 1.0.0",
       "nunit >= 3.12.0"
     ]
   },
@@ -4650,7 +4666,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "G:\\C# projects\\RedBlackTreeProject\\RedBlackTreeProject\\RedBlackTreeProject.csproj": {
+              "projectPath": "G:\\C# projects\\RedBlackTreeProject\\RedBlackTreeProject\\RedBlackTreeProject.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

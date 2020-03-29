@@ -9,7 +9,8 @@
         private bool _isNil;
         private Node _parent;
 
-        public Node(int value, Node parent = null, Color color = Color.Black, Node left = null, Node right = null, bool isNil = true)
+        public Node(int value, Color color, Node parent = null, Node left = null, Node right = null,
+            bool isNil = true)
         {
             _color = color;
             _left = left;
@@ -27,11 +28,10 @@
 
         public bool IsNil() => _isNil;
 
+        public int GetValue() => _value;
+
         public void AddChild(int value)
         {
-           
         }
-
-        
     }
 }

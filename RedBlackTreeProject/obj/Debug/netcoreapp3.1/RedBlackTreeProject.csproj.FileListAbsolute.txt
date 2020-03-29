@@ -1,0 +1,8 @@
+G:\C# projects\RedBlackTreeProject\RedBlackTreeProject\obj\Debug\netcoreapp3.1\RedBlackTreeProject.csprojAssemblyReference.cache
+G:\C# projects\RedBlackTreeProject\RedBlackTreeProject\obj\Debug\netcoreapp3.1\RedBlackTreeProject.AssemblyInfoInputs.cache
+G:\C# projects\RedBlackTreeProject\RedBlackTreeProject\obj\Debug\netcoreapp3.1\RedBlackTreeProject.AssemblyInfo.cs
+G:\C# projects\RedBlackTreeProject\RedBlackTreeProject\bin\Debug\netcoreapp3.1\RedBlackTreeProject.deps.json
+G:\C# projects\RedBlackTreeProject\RedBlackTreeProject\bin\Debug\netcoreapp3.1\RedBlackTreeProject.dll
+G:\C# projects\RedBlackTreeProject\RedBlackTreeProject\bin\Debug\netcoreapp3.1\RedBlackTreeProject.pdb
+G:\C# projects\RedBlackTreeProject\RedBlackTreeProject\obj\Debug\netcoreapp3.1\RedBlackTreeProject.dll
+G:\C# projects\RedBlackTreeProject\RedBlackTreeProject\obj\Debug\netcoreapp3.1\RedBlackTreeProject.pdb
