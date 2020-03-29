@@ -6,42 +6,60 @@ namespace RedBlackTreeProject
 {
     public class RedBlackTree
     {
-            private Node _root;
-            private List<Node> _allNodes = new List<Node>();
-     
-    
-            public RedBlackTree(int valueRoot)
+        private Node _root;
+        private List<Node> _allNodes = new List<Node>();
+
+
+        public RedBlackTree(int valueRoot)
+        {
+            _root = new Node(valueRoot, Color.Black);
+            _allNodes.Add(_root);
+        }
+
+        public Node GetRoot() => _root;
+
+        public void InsertNode(int value)
+        {
+            if (FindNodeByValue(value).GetValue() != null)
             {
-                _root = new Node(valueRoot, Color.Black);
-                _allNodes.Add(_root);
+                return;
             }
 
-            public void InsertNode(int value)
+            var currentNode = _root;
+            while (!currentNode.IsNil())
             {
-                var node = new Node(value, Color.Red);
-                _allNodes.Add(node);
+                currentNode = value > currentNode.GetValue() ? currentNode.GetRight() : currentNode.GetLeft();
             }
 
-            public void DeleteNode(int value)
-            {
-                var node = FindNodeByValue(value);
-                _allNodes.Remove(node);
-            }
-            public int CountOfNode() => _allNodes.Count();
+            var node = new Node(value, Color.Red, currentNode.GetParent());
+            node.CheckColor();
 
-            public List<Node> GetAllNodes() => _allNodes;
+            currentNode.GetParent().AddChild(node);
 
-            private Node FindNodeByValue(int value)
+            _allNodes.Add(node);
+        }
+
+        public void DeleteNode(int value)
+        {
+            var node = FindNodeByValue(value);
+            _allNodes.Remove(node);
+        }
+
+        public int CountOfNode() => _allNodes.Count();
+
+        public IEnumerable<Node> GetAllNodes() => _allNodes;
+
+        private Node FindNodeByValue(int value)
+        {
+            foreach (var node in _allNodes)
             {
-                foreach (var node in _allNodes)
+                if (value == node.GetValue())
                 {
-                    if (value == node.GetValue())
-                    {
-                        return node;
-                    }
+                    return node;
                 }
-
-                return new Node(0, Color.Red);
             }
+
+            return new Node(null, Color.Red);
+        }
     }
 }

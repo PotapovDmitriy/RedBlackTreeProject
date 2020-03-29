@@ -2,36 +2,61 @@
 {
     public class Node
     {
+        private readonly int? _value;
         private Color _color;
-        private readonly int _value;
         private Node _left;
         private Node _right;
-        private bool _isNil;
         private Node _parent;
 
-        public Node(int value, Color color, Node parent = null, Node left = null, Node right = null,
-            bool isNil = true)
+        public Node(int? value, Color color, Node parent = null, Node left = null, Node right = null)
         {
-            _color = color;
-            _left = left;
-            _right = right;
-            _isNil = isNil;
-            _parent = parent;
             _value = value;
+            _color = color;
+            _left = value == null ? null : new Node(null, Color.Black, this);
+            _right = value == null ? null : new Node(null, Color.Black, this);
+            _parent = parent;
         }
 
         public Node GetLeft() => _left;
 
         public Node GetRight() => _right;
 
+        // public void SetLeft(Node node)
+        // {
+        //     _left = node;
+        // }
+        //
+        // public void SetRight(Node node)
+        // {
+        //     _right = node;
+        // }
+
         public Color GetColor() => _color;
 
-        public bool IsNil() => _isNil;
+        public bool IsNil() => _value == null;
 
-        public int GetValue() => _value;
+        public int? GetValue() => _value;
 
-        public void AddChild(int value)
+        public Node GetParent() => _parent;
+
+        public void AddChild(Node node)
         {
+            if (node.GetValue() >= _value)
+            {
+                _right = node;
+            }
+            else
+            {
+                _left = node;
+            }
+        }
+
+        public void CheckColor()
+        {
+            if (_parent._color == Color.Red)
+            {
+                _color = Color.Black;
+            }
         }
     }
 }
