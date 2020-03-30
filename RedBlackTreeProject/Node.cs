@@ -7,6 +7,7 @@
         private Node _left;
         private Node _right;
         private Node _parent;
+        private bool _flag;
 
         public Node(int? value, Color color, Node parent = null, Node left = null, Node right = null)
         {
@@ -15,11 +16,19 @@
             _left = value == null ? null : new Node(null, Color.Black, this);
             _right = value == null ? null : new Node(null, Color.Black, this);
             _parent = parent;
+            _flag = false;
         }
 
         public Node GetLeft() => _left;
 
         public Node GetRight() => _right;
+
+        public bool GetFlag() => _flag;
+
+        public void SetFlag(bool flag)
+        {
+            _flag = flag;
+        }
 
         // public void SetLeft(Node node)
         // {
