@@ -30,15 +30,15 @@
             _flag = flag;
         }
 
-        // public void SetLeft(Node node)
-        // {
-        //     _left = node;
-        // }
-        //
-        // public void SetRight(Node node)
-        // {
-        //     _right = node;
-        // }
+        public void SetLeft(Node node)
+        {
+            _left = node;
+        }
+        
+        public void SetRight(Node node)
+        {
+            _right = node;
+        }
 
         public Color GetColor() => _color;
 
@@ -47,6 +47,11 @@
         public int? GetValue() => _value;
 
         public Node GetParent() => _parent;
+
+        public void SetParent(Node node)
+        {
+            _parent = node;
+        }
 
         public void AddChild(Node node)
         {
@@ -62,10 +67,12 @@
 
         public void CheckColor()
         {
-            if (_parent._color == Color.Red)
+            if (_parent == null) return;
+            if (_parent._color == Color.Red )
             {
                 _color = Color.Black;
             }
+
         }
     }
 }
