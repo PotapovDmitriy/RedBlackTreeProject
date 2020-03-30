@@ -2,7 +2,7 @@
 {
     public class Node
     {
-        private readonly int? _value;
+        private int? _value;
         private Color _color;
         private Node _left;
         private Node _right;
@@ -34,7 +34,7 @@
         {
             _left = node;
         }
-        
+
         public void SetRight(Node node)
         {
             _right = node;
@@ -45,6 +45,11 @@
         public bool IsNil() => _value == null;
 
         public int? GetValue() => _value;
+        
+        public void SetValue(int? value)
+        {
+            _value = value;
+        }
 
         public Node GetParent() => _parent;
 
@@ -65,14 +70,15 @@
             }
         }
 
-        public void CheckColor()
+        public void Recolor()
         {
             if (_parent == null) return;
-            if (_parent._color == Color.Red )
-            {
-                _color = Color.Black;
-            }
+            _color = _color == Color.Black ? Color.Red : Color.Black;
+        }
 
+        public void SetColor(Color color)
+        {
+            _color = color;
         }
     }
 }
