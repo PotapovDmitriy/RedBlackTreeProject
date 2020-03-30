@@ -45,18 +45,27 @@ namespace RedBlackTreeProject
 
         }
 
-        private void FindRootNode()
+        public bool FindRootNode()
         {
+            var countOfRoot = 0;
             foreach (var node in _allNodes.Where(node => node.GetParent() == null))
             {
+                countOfRoot++;
                 _root = node;
             }
+
+            return countOfRoot <= 1;
         }
 
         public bool DeleteNode(int value)
         {
-            
+            if (FindNodeByValue(value).GetValue() == null)
+            {
+                return false;
+            }
             var node = FindNodeByValue(value);
+            node.GetLeft().SetParent(null);
+            node.GetRight().SetParent(null);
             _allNodes.Remove(node);
             return true;
         }

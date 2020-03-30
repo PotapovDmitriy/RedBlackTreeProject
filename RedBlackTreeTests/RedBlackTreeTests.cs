@@ -114,12 +114,30 @@ namespace RedBlackTreeTests
             tree.InsertNode(2);
             tree.InsertNode(3);
             tree.InsertNode(4);
-            // tree.InsertNode(11);
-            // tree.InsertNode(15);
-            // tree.InsertNode(25);
-            // tree.InsertNode(22);
-            // tree.InsertNode(27);
-            // tree.InsertNode(6);
+            tree.InsertNode(5);
+            tree.InsertNode(6);
+            tree.InsertNode(7);
+
+
+            Assert.AreEqual(true, CheckEachBranchForTheNumberOfBlackNodes(tree),
+                "The number of black nodes in each branch should be the same");
+        }
+
+        [Test]
+        public void CheckEachBranchForTheNumberOfBlackNodesAfterDelete()
+        {
+            var tree = new RedBlackTree(13);
+            tree.InsertNode(8);
+            tree.InsertNode(17);
+            tree.InsertNode(1);
+            tree.InsertNode(11);
+            tree.InsertNode(15);
+            tree.InsertNode(25);
+            tree.InsertNode(22);
+            tree.InsertNode(27);
+            tree.DeleteNode(13);
+            tree.DeleteNode(17);
+            tree.InsertNode(13);
 
 
             Assert.AreEqual(true, CheckEachBranchForTheNumberOfBlackNodes(tree),
@@ -128,7 +146,13 @@ namespace RedBlackTreeTests
 
         private static bool CheckEachBranchForTheNumberOfBlackNodes(RedBlackTree tree)
         {
+            if (!tree.FindRootNode())
+            {
+                return false;
+            }
+
             var currentNode = tree.GetRoot();
+
             var count = 0;
             var res = true;
             var prevCountOfBlack = 0;
@@ -177,7 +201,6 @@ namespace RedBlackTreeTests
             tree.DeleteNode(17);
             tree.InsertNode(15);
             tree.InsertNode(25);
-            tree.DeleteNode(1);
             foreach (var node in tree.GetAllNodes())
             {
                 var res = true;
@@ -190,6 +213,7 @@ namespace RedBlackTreeTests
                 Assert.AreEqual(true, res, "Red parent can have only black child");
             }
         }
+
         [Test]
         public void CheckForNodeExistenceWhenDeleting()
         {
